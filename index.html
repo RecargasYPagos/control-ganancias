@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="description" content="Control de dinero y cálculo de ganancias">
+
+    <title>Control de Ganancias</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- ENCABEZADO -->
+        <header class="header">
+            <div class="header-icon">💰</div>
+
+            <div>
+                <h1>Control de Ganancias</h1>
+                <p>Control de dinero e inversión</p>
+            </div>
+        </header>
+
+
+        <!-- APARTADOS DE DINERO -->
+        <section class="card">
+
+            <div class="section-title">
+                <span>💵</span>
+                <h2>Dinero disponible</h2>
+            </div>
+
+            <div class="input-list">
+
+                <div class="input-group">
+                    <label for="ventamovil">Ventamovil</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="ventamovil"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="axios">Axios</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="axios"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="tiendamax">TiendaMax</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="tiendamax"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="espremiun">Espremiun</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="espremiun"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="randimovil">RandiMovil</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="randimovil"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="efectivo">Efectivo</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="efectivo"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="adeudos">Adeudos</label>
+                    <div class="money-input">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="adeudos"
+                            class="amount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOTAL -->
+        <section class="result-card total-card">
+
+            <div class="result-icon">Σ</div>
+
+            <div class="result-content">
+                <span class="result-label">TOTAL</span>
+                <strong id="total">$0.00</strong>
+            </div>
+
+        </section>
+
+
+        <!-- INVERSIÓN -->
+        <section class="card investment-card">
+
+            <div class="section-title">
+                <span>📦</span>
+                <h2>Inversión</h2>
+            </div>
+
+            <p class="description">
+                Ingresa cuánto dinero invertiste.
+            </p>
+
+            <div class="investment-input">
+                <span>$</span>
+
+                <input
+                    type="number"
+                    id="inversion"
+                    placeholder="0.00"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal">
+            </div>
+
+        </section>
+
+
+        <!-- GANANCIA -->
+        <section class="result-card profit-card">
+
+            <div class="result-icon">📈</div>
+
+            <div class="result-content">
+                <span class="result-label">GANANCIA</span>
+                <strong id="ganancia">$0.00</strong>
+            </div>
+
+        </section>
+
+
+        <!-- 10% -->
+        <section class="result-card percentage-card">
+
+            <div class="result-icon">10%</div>
+
+            <div class="result-content">
+                <span class="result-label">10% DE LA GANANCIA</span>
+                <strong id="diezPorciento">$0.00</strong>
+            </div>
+
+        </section>
+
+
+        <!-- EXPLICACIÓN -->
+        <section class="formula-card">
+
+            <h3>📊 Resumen del cálculo</h3>
+
+            <div class="formula-row">
+                <span>Total</span>
+                <span id="summaryTotal">$0.00</span>
+            </div>
+
+            <div class="formula-row">
+                <span>− Inversión</span>
+                <span id="summaryInversion">$0.00</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="formula-row highlight">
+                <span>Ganancia</span>
+                <span id="summaryGanancia">$0.00</span>
+            </div>
+
+            <div class="formula-row">
+                <span>10% de ganancia</span>
+                <span id="summaryPorcentaje">$0.00</span>
+            </div>
+
+        </section>
+
+
+        <!-- BOTÓN LIMPIAR -->
+        <button id="btnLimpiar" class="clear-button">
+            🗑️ Limpiar cálculo
+        </button>
+
+
+        <footer>
+            <p>Control de Ganancias</p>
+            <small>Calculadora para uso personal</small>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+                                                   </html>
